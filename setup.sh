@@ -8,7 +8,7 @@ if [ "$(uname)" != "Linux" ]; then
 fi
 
 DISTRO=$(cat /etc/*-release | grep -w ID | cut -d= -f2 | tr -d '"')
-if [ "$DISTRO" != "debian" ] || [ "$DISTRO" != "ubuntu" ]; then
+if [ "$DISTRO" != "debian" ] && [ "$DISTRO" != "ubuntu" ]; then
   echo "DISTRO NOT SUPPORTED"
   exit 1
 fi
